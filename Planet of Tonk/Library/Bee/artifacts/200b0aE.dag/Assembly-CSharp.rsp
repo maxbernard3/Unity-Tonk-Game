@@ -345,11 +345,13 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.UI.ref.dll"
-"Assets/Script/DoorTriger.cs"
+"Assets/Script/gunElevation.cs"
 "Assets/Script/mouse_aim.cs"
+"Assets/Script/mouse_aim_Prototype.cs"
 "Assets/Script/mouvement.cs"
 "Assets/Script/Rain.cs"
 "Assets/Script/raindrop.cs"
+"Assets/Script/turretRotation.cs"
 -langversion:9.0
 
 /deterministic
