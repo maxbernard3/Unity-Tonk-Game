@@ -325,6 +325,9 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/Unity.EditorCoroutines.Editor.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/Unity.Performance.Profile-Analyzer.Editor.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/Unity.PlasticSCM.Editor.ref.dll"
+-r:"Library/Bee/artifacts/200b0aE.dag/Unity.Recorder.Base.ref.dll"
+-r:"Library/Bee/artifacts/200b0aE.dag/Unity.Recorder.Editor.ref.dll"
+-r:"Library/Bee/artifacts/200b0aE.dag/Unity.Recorder.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/Unity.Rider.Editor.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.ref.dll"
@@ -345,13 +348,13 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.UI.ref.dll"
-"Assets/Script/gunElevation.cs"
-"Assets/Script/mouse_aim.cs"
-"Assets/Script/mouse_aim_Prototype.cs"
+"Assets/Script/Aiming.cs"
+"Assets/Script/CameraControler.cs"
+"Assets/Script/gunfire.cs"
 "Assets/Script/mouvement.cs"
 "Assets/Script/Rain.cs"
 "Assets/Script/raindrop.cs"
-"Assets/Script/turretRotation.cs"
+"Assets/Script/shell.cs"
 -langversion:9.0
 
 /deterministic

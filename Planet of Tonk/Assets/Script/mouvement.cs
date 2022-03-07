@@ -49,16 +49,7 @@ public class mouvement : MonoBehaviour
         //movement
         Vector3 move = (transform.forward * z);
 
-        if(z != 0)
-        {
-            Acceleration += speed - Acceleration;
-        }
-        else
-        {
-            Acceleration = 0;
-        }
-
-        controller.Move(move * Acceleration * Time.deltaTime);
+        controller.Move(move * Time.deltaTime);
 
         //gravity & acceleration
         velocity.y += gravity * Time.deltaTime; 

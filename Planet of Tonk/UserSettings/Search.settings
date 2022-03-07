@@ -7,6 +7,12 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
+	"last_search.B064B029" = "recorder"
+	"OpenInspectorPreview.B064B029" = "0"
+	"currentGroup.B064B029" = "all"
+	"last_search.2B72EE4B" = "recorder"
+	"OpenInspectorPreview.2B72EE4B" = "0"
+	"currentGroup.2B72EE4B" = "all"
 }
 providers = {
 	find = {
@@ -56,6 +62,7 @@ providers = {
 	}
 }
 recentSearches = [
+	"r"
 ]
 searchItemFavorites = [
 ]
