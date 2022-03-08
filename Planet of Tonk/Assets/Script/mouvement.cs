@@ -19,6 +19,8 @@ public class mouvement : MonoBehaviour
     [SerializeField]
     private float speed = 12f;
     [SerializeField]
+    private float Acceleration = 5.0f;
+    [SerializeField]
     private float turn = 5f;
 
     [SerializeField]
@@ -26,7 +28,8 @@ public class mouvement : MonoBehaviour
 
     Vector3 velocity;
     bool isOnGround;
-    float Acceleration = 0.0f;
+
+    private float forwardSpeed = 0f;
 
     void Start()
     {
@@ -47,9 +50,13 @@ public class mouvement : MonoBehaviour
         float z = Input.GetAxis("Vertical");
 
         //movement
-        Vector3 move = (transform.forward * z);
+        Vector3 move = transform.forward * z;
 
-        controller.Move(move * Time.deltaTime);
+        forwardSpeed =+ speed * Time.deltaTime * Acceleration;
+
+        forwardSpeed = Mathf.Clamp(forwardSpeed, speed / 2, speed);
+
+        controller.Move(move * forwardSpeed * Time.deltaTime);
 
         //gravity & acceleration
         velocity.y += gravity * Time.deltaTime; 

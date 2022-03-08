@@ -355,6 +355,7 @@
 "Assets/Script/Rain.cs"
 "Assets/Script/raindrop.cs"
 "Assets/Script/shell.cs"
+"Assets/Script/UI.cs"
 -langversion:9.0
 
 /deterministic

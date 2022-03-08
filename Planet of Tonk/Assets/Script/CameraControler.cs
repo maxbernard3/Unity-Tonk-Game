@@ -10,7 +10,7 @@ public class CameraControler : MonoBehaviour
 
     //Comander Camera
     [SerializeField]
-	private GameObject Camera;
+	private GameObject mainCamera;
 
     [SerializeField]
     private Transform player;
@@ -34,6 +34,7 @@ public class CameraControler : MonoBehaviour
     [SerializeField]
     private float orbitDistance = 10f;
 
+    private short sniper = 0;
     private Quaternion lastRotation;
 
     void Start()
@@ -47,7 +48,22 @@ public class CameraControler : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
 
-        if(Input.GetKeyDown("v") == true)
+
+        //if (Input.GetKeyDown(KeyCode.LeftShift))
+        //{
+        //    if (sniper == 0)
+        //    {
+        //        var cam = mainCamera.
+        //        sniper = 1;
+        //    }
+        //    else
+        //    {
+
+        //        sniper = 0;
+        //    }
+        //}
+
+        if (Input.GetKeyDown("v") == true)
         {
             lastRotation = Quaternion.Euler(tformParent.transform.localEulerAngles.x, tformParent.transform.localEulerAngles.y, 0);
             if (fstPerson == false)
