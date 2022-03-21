@@ -5,7 +5,9 @@ using UnityEngine;
 public class Aiming : MonoBehaviour
 {
     [SerializeField]
-    private Camera cam;
+    private GameObject mainCamera;
+    [SerializeField]
+    private GameObject sniperCamera;
 
     [SerializeField]
     private float maxElevation;
@@ -23,6 +25,7 @@ public class Aiming : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     // Update is called once per frame
@@ -38,21 +41,38 @@ public class Aiming : MonoBehaviour
         }
 
         gunAlignment = alignment;
+        Ray ray;
+        if (CameraControler.sniper)
+        {
 
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        }
+        else
+        {
+            ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
+            Plane rot = new Plane(transform.right, transform.position);
+            Vector3 aimpoint = ray.GetPoint(alignment);
 
-        Vector3 aimpoint = ray.GetPoint(alignment);
 
-        float turretAngle = Mathf.Atan2((aimpoint.x - transform.position.x) , (aimpoint.z - transform.position.z))*(180/Mathf.PI);
+            float direction = 0f;
 
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, turretAngle, 0), Time.deltaTime * rotationSpeed);
+            if (rot.GetSide(aimpoint))
+                direction = 1f;
+            else
+                direction = -1f;
 
-        float gunElevation;
+            float angle = transform.localEulerAngles.y + direction * rotationSpeed * Time.deltaTime;
+            if (angle > 180)
+                angle -= 360;
 
-        gunElevation = Mathf.Asin((aimpoint.y - transform.position.y) / alignment) * (180 / Mathf.PI);
-        gunElevation = Mathf.Clamp(gunElevation, maxDepresion, maxElevation);
+            transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, angle, transform.localEulerAngles.z);
 
-        transform.GetChild(0).localRotation = Quaternion.RotateTowards(transform.GetChild(0).localRotation
-            , Quaternion.Euler(gunElevation * -1, 0, 0), Time.deltaTime * elevationSpeed);
+            float gunElevation;
+
+            gunElevation = Mathf.Asin((aimpoint.y - transform.position.y) / alignment) * (180 / Mathf.PI);
+            gunElevation = Mathf.Clamp(gunElevation, maxDepresion, maxElevation);
+
+            transform.GetChild(0).localRotation = Quaternion.RotateTowards(transform.GetChild(0).localRotation
+                , Quaternion.Euler(gunElevation * -1, 0, 0), Time.deltaTime * elevationSpeed);
+        }
     }
 }

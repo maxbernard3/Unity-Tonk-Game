@@ -4,63 +4,92 @@ using UnityEngine;
 
 public class mouvement : MonoBehaviour
 {
-    [SerializeField]
-    private Transform player;
-
-    [SerializeField]
-    private CharacterController controller;
-    [SerializeField]
-    private Transform groundCheck;
-    [SerializeField]
-    private float groudDistance = 0.5f;
-    [SerializeField]
-    private LayerMask groundMask;
-
-    [SerializeField]
-    private float speed = 12f;
-    [SerializeField]
-    private float Acceleration = 5.0f;
-    [SerializeField]
-    private float turn = 5f;
-
-    [SerializeField]
-    private float gravity = -10f;
-
-    Vector3 velocity;
-    bool isOnGround;
-
-    private float forwardSpeed = 0f;
+    public float enginePower = 150.0f;
+    private float power = 0.0f;
+    private float brake = 0.0f;
+    private float steer = 0.0f;
+    public float maxSteer = 25.0f;
+    public WheelCollider FrontLeft;
+    public WheelCollider FrontRight;
+    public WheelCollider CenterLeft;
+    public WheelCollider CenterRight;
+    public WheelCollider RearLeft;
+    public WheelCollider RearRight;
 
     void Start()
     {
-        
+        gameObject.GetComponent<Rigidbody>().centerOfMass = new Vector3(0f, -0.5f, 0.3f);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        isOnGround = Physics.CheckSphere(groundCheck.position, groudDistance, groundMask);
+        power = Input.GetAxis("Vertical") * enginePower * Time.deltaTime * 250.0f;
+        steer = Mathf.Abs(Input.GetAxis("Horizontal")) * Mathf.Sign(Input.GetAxis("Vertical")) * enginePower * Time.deltaTime * 200.0f;
+        brake = Input.GetKey("space") ? gameObject.GetComponent<Rigidbody>() .mass * 1f : 0.0f;
 
-        if(isOnGround && velocity.y < 0f) 
+        if (brake > 0.0)
         {
-            velocity.y = -10f;
+            FrontLeft.brakeTorque = brake;
+            FrontRight.brakeTorque = brake;
+            RearLeft.brakeTorque = brake;
+            RearRight.brakeTorque = brake;
+            CenterLeft.brakeTorque = brake;
+            CenterRight.brakeTorque = brake;
+            RearLeft.motorTorque = 0.0f;
+            RearRight.motorTorque = 0.0f;
+            FrontLeft.motorTorque = 0.0f;
+            FrontRight.motorTorque = 0.0f;
+            CenterLeft.motorTorque = 0.0f;
+            CenterRight.motorTorque = 0.0f;
+        }
+        else
+        {
+            FrontLeft.brakeTorque = 0f;
+            FrontRight.brakeTorque = 0f;
+            RearLeft.brakeTorque = 0f;
+            RearRight.brakeTorque = 0f;
+            CenterLeft.brakeTorque = 0f;
+            CenterRight.brakeTorque = 0f;
+            FrontLeft.motorTorque = power;
+            FrontRight.motorTorque = power;
+            RearLeft.motorTorque = power;
+            RearRight.motorTorque = power;
+            CenterLeft.motorTorque = power;
+            CenterRight.motorTorque = power;
         }
 
-        float x = Input.GetAxis("Horizontal") * turn * Time.deltaTime;
-        float z = Input.GetAxis("Vertical");
-
-        //movement
-        Vector3 move = transform.forward * z;
-
-        forwardSpeed =+ speed * Time.deltaTime * Acceleration;
-
-        forwardSpeed = Mathf.Clamp(forwardSpeed, speed / 2, speed);
-
-        controller.Move(move * forwardSpeed * Time.deltaTime);
-
-        //gravity & acceleration
-        velocity.y += gravity * Time.deltaTime; 
-        controller.Move(velocity * Time.deltaTime);
-        player.Rotate(Vector3.up * x);
+        if (steer != 0f)
+        {
+            if (Input.GetAxis("Horizontal") > 0.0f)
+            {
+                FrontLeft.brakeTorque = 0f;
+                FrontRight.brakeTorque = 0f;
+                RearLeft.brakeTorque = 0f;
+                RearRight.brakeTorque = 0f;
+                CenterLeft.brakeTorque = 0f;
+                CenterRight.brakeTorque = 0f;
+                RearLeft.motorTorque = steer;
+                FrontLeft.motorTorque = steer;
+                CenterLeft.motorTorque = steer;
+                RearRight.motorTorque = 0.2f * steer;
+                FrontRight.motorTorque = 0.2f * steer;
+                CenterRight.motorTorque = 0.2f * steer;
+            }
+            else
+            {
+                FrontLeft.brakeTorque = 0f;
+                FrontRight.brakeTorque = 0f;
+                RearLeft.brakeTorque = 0f;
+                RearRight.brakeTorque = 0f;
+                CenterLeft.brakeTorque = 0f;
+                CenterRight.brakeTorque = 0f;
+                RearRight.motorTorque = steer;
+                FrontRight.motorTorque = steer;
+                CenterRight.motorTorque = steer;
+                RearLeft.motorTorque = 0.2f * steer;
+                FrontLeft.motorTorque = 0.2f * steer;
+                CenterLeft.motorTorque = 0.2f * steer;
+            }
+        }
     }
 }

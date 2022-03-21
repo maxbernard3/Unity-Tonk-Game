@@ -5,29 +5,29 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637820372070000000
-    m_Hash: 2346658883
+      ticks: 637829437470000000
+    m_Hash: 1119030035
   m_LockFileStatus:
     m_FilePath: /Users/maxbernard/Documents/GitHub/Unity Tonk Game/Planet of Tonk/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637820372070000000
-    m_Hash: 273135205
+      ticks: 637829437490000000
+    m_Hash: 2584499476
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus: []
 m_ProjectPath: /Users/maxbernard/Documents/GitHub/Unity Tonk Game/Planet of Tonk/Packages
-m_EditorVersion: 2021.2.11f1 (e50cafbb4399)
+m_EditorVersion: 2021.2.15f1 (3b8567f665bb)
 m_ResolvedPackages:
-- packageId: com.unity.collab-proxy@1.15.7
+- packageId: com.unity.collab-proxy@1.15.13
   testable: 0
   isDirectDependency: 1
-  version: 1.15.7
+  version: 1.15.13
   source: 1
-  resolvedPath: /Users/maxbernard/Documents/GitHub/Unity Tonk Game/Planet of Tonk/Library/PackageCache/com.unity.collab-proxy@1.15.7
+  resolvedPath: /Users/maxbernard/Documents/GitHub/Unity Tonk Game/Planet of Tonk/Library/PackageCache/com.unity.collab-proxy@1.15.13
   assetPath: Packages/com.unity.collab-proxy
   name: com.unity.collab-proxy
   displayName: Version Control
@@ -78,12 +78,14 @@ m_ResolvedPackages:
     - 1.14.9
     - 1.14.12
     - 1.14.13
+    - 1.14.15
     - 1.15.1
     - 1.15.4
     - 1.15.7
     - 1.15.9
     - 1.15.12
     - 1.15.13
+    - 1.15.15
     - 2.0.0-preview.6
     - 2.0.0-preview.8
     - 2.0.0-preview.15
@@ -95,10 +97,8 @@ m_ResolvedPackages:
     - 2.1.0-preview.5
     - 2.1.0-preview.6
     compatible:
-    - 1.15.7
-    - 1.15.9
-    - 1.15.12
     - 1.15.13
+    - 1.15.15
     - 2.0.0-preview.6
     - 2.0.0-preview.8
     - 2.0.0-preview.15
@@ -109,15 +109,11 @@ m_ResolvedPackages:
     - 2.1.0-preview.3
     - 2.1.0-preview.5
     - 2.1.0-preview.6
-    verified: 1.15.13
+    verified: 1.15.15
   dependencies:
-  - name: com.unity.nuget.newtonsoft-json
-    version: 2.0.0
   - name: com.unity.services.core
     version: 1.0.1
   resolvedDependencies:
-  - name: com.unity.nuget.newtonsoft-json
-    version: 2.0.0
   - name: com.unity.services.core
     version: 1.0.1
   - name: com.unity.modules.unitywebrequest
@@ -145,16 +141,16 @@ m_ResolvedPackages:
     capabilities: 7
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637744672890000000
+  datePublishedTicks: 637807003040000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.cloud.collaborate.git
-    revision: d208594e5483cdf10d303b6ee17df4d6bf58d3de
+    revision: 825774911ad2d1440ac844c9be1ae2c9b5dc7966
     path: 
   unityLifecycle:
-    version: 1.15.7
+    version: 1.15.13
     nextVersion: 
 - packageId: com.unity.feature.development@1.0.1
   testable: 0
@@ -202,7 +198,7 @@ m_ResolvedPackages:
   - name: com.unity.ide.visualstudio
     version: 2.0.14
   - name: com.unity.test-framework
-    version: 1.1.29
+    version: 1.1.31
   - name: com.unity.ext.nunit
     version: 1.0.6
   - name: com.unity.modules.imgui
@@ -210,9 +206,9 @@ m_ResolvedPackages:
   - name: com.unity.modules.jsonserialize
     version: 1.0.0
   - name: com.unity.ide.rider
-    version: 3.0.9
+    version: 3.0.12
   - name: com.unity.ide.vscode
-    version: 1.2.4
+    version: 1.2.5
   - name: com.unity.editorcoroutines
     version: 1.0.0
   - name: com.unity.performance.profile-analyzer
@@ -242,12 +238,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.0.1
     nextVersion: 
-- packageId: com.unity.ide.rider@3.0.9
+- packageId: com.unity.ide.rider@3.0.12
   testable: 0
   isDirectDependency: 1
-  version: 3.0.9
+  version: 3.0.12
   source: 1
-  resolvedPath: /Users/maxbernard/Documents/GitHub/Unity Tonk Game/Planet of Tonk/Library/PackageCache/com.unity.ide.rider@3.0.9
+  resolvedPath: /Users/maxbernard/Documents/GitHub/Unity Tonk Game/Planet of Tonk/Library/PackageCache/com.unity.ide.rider@3.0.12
   assetPath: Packages/com.unity.ide.rider
   name: com.unity.ide.rider
   displayName: JetBrains Rider Editor
@@ -293,8 +289,6 @@ m_ResolvedPackages:
     - 3.0.10
     - 3.0.12
     compatible:
-    - 3.0.9
-    - 3.0.10
     - 3.0.12
     verified: 3.0.12
   dependencies:
@@ -313,16 +307,16 @@ m_ResolvedPackages:
     capabilities: 7
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637762012950000000
+  datePublishedTicks: 637789697420000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.rider.git
-    revision: bbc029723f4d157f759dba0f2d438dfcec2e73eb
+    revision: 453b1e1578da65dafbc7ad6fb71a95ca6b8730f7
     path: 
   unityLifecycle:
-    version: 3.0.9
+    version: 3.0.12
     nextVersion: 
 - packageId: com.unity.ide.visualstudio@2.0.14
   testable: 0
@@ -371,7 +365,7 @@ m_ResolvedPackages:
     version: 1.1.9
   resolvedDependencies:
   - name: com.unity.test-framework
-    version: 1.1.29
+    version: 1.1.31
   - name: com.unity.ext.nunit
     version: 1.0.6
   - name: com.unity.modules.imgui
@@ -399,12 +393,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 2.0.14
     nextVersion: 
-- packageId: com.unity.ide.vscode@1.2.4
+- packageId: com.unity.ide.vscode@1.2.5
   testable: 0
   isDirectDependency: 1
-  version: 1.2.4
+  version: 1.2.5
   source: 1
-  resolvedPath: /Users/maxbernard/Documents/GitHub/Unity Tonk Game/Planet of Tonk/Library/PackageCache/com.unity.ide.vscode@1.2.4
+  resolvedPath: /Users/maxbernard/Documents/GitHub/Unity Tonk Game/Planet of Tonk/Library/PackageCache/com.unity.ide.vscode@1.2.5
   assetPath: Packages/com.unity.ide.vscode
   name: com.unity.ide.vscode
   displayName: Visual Studio Code Editor
@@ -435,7 +429,6 @@ m_ResolvedPackages:
     - 1.2.4
     - 1.2.5
     compatible:
-    - 1.2.4
     - 1.2.5
     verified: 1.2.5
   dependencies: []
@@ -450,16 +443,16 @@ m_ResolvedPackages:
     capabilities: 7
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637660806170000000
+  datePublishedTicks: 637800255360000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
-    url: git+https://github.com/Unity-Technologies/com.unity.ide.vscode.git
-    revision: 1f4f605d5c988cb610c372b5c5216c46cc8f5d30
+    url: https://github.com/Unity-Technologies/com.unity.ide.vscode.git
+    revision: b0740c80bfc2440527c317109f7c3d9100132722
     path: 
   unityLifecycle:
-    version: 1.2.4
+    version: 1.2.5
     nextVersion: 
 - packageId: com.unity.recorder@3.0.3
   testable: 0
@@ -518,7 +511,7 @@ m_ResolvedPackages:
     version: 1.0.0
   resolvedDependencies:
   - name: com.unity.timeline
-    version: 1.6.3
+    version: 1.6.4
   - name: com.unity.modules.director
     version: 1.0.0
   - name: com.unity.modules.audio
@@ -560,12 +553,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 3.0.3
     nextVersion: 
-- packageId: com.unity.test-framework@1.1.29
+- packageId: com.unity.test-framework@1.1.31
   testable: 0
   isDirectDependency: 1
-  version: 1.1.29
+  version: 1.1.31
   source: 1
-  resolvedPath: /Users/maxbernard/Documents/GitHub/Unity Tonk Game/Planet of Tonk/Library/PackageCache/com.unity.test-framework@1.1.29
+  resolvedPath: /Users/maxbernard/Documents/GitHub/Unity Tonk Game/Planet of Tonk/Library/PackageCache/com.unity.test-framework@1.1.31
   assetPath: Packages/com.unity.test-framework
   name: com.unity.test-framework
   displayName: Test Framework
@@ -616,8 +609,6 @@ m_ResolvedPackages:
     - 2.0.1-pre.12
     - 2.0.1-pre.18
     compatible:
-    - 1.1.29
-    - 1.1.30
     - 1.1.31
     - 2.0.1-pre.12
     - 2.0.1-pre.18
@@ -648,16 +639,16 @@ m_ResolvedPackages:
     capabilities: 7
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637647922650000000
+  datePublishedTicks: 637804266210000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
-    url: git+https://github.com/Unity-Technologies/com.unity.test-framework.git
-    revision: dac53542acdab7a12e9ebf111ac588d0e53cf483
+    url: https://github.com/Unity-Technologies/com.unity.test-framework.git
+    revision: 438b0defc147c9be5c969ca79ff03a722b4590ed
     path: 
   unityLifecycle:
-    version: 1.1.29
+    version: 1.1.31
     nextVersion: 
 - packageId: com.unity.textmeshpro@3.0.6
   testable: 0
@@ -760,6 +751,7 @@ m_ResolvedPackages:
     - 2.1.6
     - 2.2.0-preview.1
     - 2.2.0-preview.2
+    - 2.2.0-preview.3
     - 3.0.0-preview.1
     - 3.0.0-preview.3
     - 3.0.0-preview.4
@@ -779,11 +771,13 @@ m_ResolvedPackages:
     - 3.0.6
     - 3.2.0-pre.1
     - 3.2.0-pre.2
+    - 3.2.0-pre.3
     - 4.0.0-pre.1
     compatible:
     - 3.0.6
     - 3.2.0-pre.1
     - 3.2.0-pre.2
+    - 3.2.0-pre.3
     verified: 3.0.6
   dependencies:
   - name: com.unity.ugui
@@ -821,12 +815,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 3.0.6
     nextVersion: 
-- packageId: com.unity.timeline@1.6.3
+- packageId: com.unity.timeline@1.6.4
   testable: 0
   isDirectDependency: 1
-  version: 1.6.3
+  version: 1.6.4
   source: 1
-  resolvedPath: /Users/maxbernard/Documents/GitHub/Unity Tonk Game/Planet of Tonk/Library/PackageCache/com.unity.timeline@1.6.3
+  resolvedPath: /Users/maxbernard/Documents/GitHub/Unity Tonk Game/Planet of Tonk/Library/PackageCache/com.unity.timeline@1.6.4
   assetPath: Packages/com.unity.timeline
   name: com.unity.timeline
   displayName: Timeline
@@ -913,12 +907,13 @@ m_ResolvedPackages:
     - 1.7.0-pre.1
     - 1.7.0-pre.2
     - 1.7.0
+    - 1.7.1
     compatible:
-    - 1.6.3
     - 1.6.4
     - 1.7.0-pre.1
     - 1.7.0-pre.2
     - 1.7.0
+    - 1.7.1
     verified: 1.6.4
   dependencies:
   - name: com.unity.modules.director
@@ -953,16 +948,16 @@ m_ResolvedPackages:
     capabilities: 7
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637703491050000000
+  datePublishedTicks: 637789039180000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.timeline.git
-    revision: 527d3ba73eae5d77407d8300c31dd62770a7409f
+    revision: d7e1eb6805737974459309b7d6e7db58635dd167
     path: 
   unityLifecycle:
-    version: 1.6.3
+    version: 1.6.4
     nextVersion: 
 - packageId: com.unity.ugui@1.0.0
   testable: 0
@@ -3093,7 +3088,7 @@ m_ResolvedPackages:
     version: 1.0.1
   resolvedDependencies:
   - name: com.unity.test-framework
-    version: 1.1.29
+    version: 1.1.31
   - name: com.unity.ext.nunit
     version: 1.0.6
   - name: com.unity.modules.imgui
@@ -3126,76 +3121,6 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 1.0.1
-    nextVersion: 
-- packageId: com.unity.nuget.newtonsoft-json@2.0.0
-  testable: 0
-  isDirectDependency: 0
-  version: 2.0.0
-  source: 1
-  resolvedPath: /Users/maxbernard/Documents/GitHub/Unity Tonk Game/Planet of Tonk/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0
-  assetPath: Packages/com.unity.nuget.newtonsoft-json
-  name: com.unity.nuget.newtonsoft-json
-  displayName: Newtonsoft Json
-  author:
-    name: 
-    email: 
-    url: 
-  category: 
-  type: 
-  description: 'Newtonsoft Json for use in Unity projects and Unity packages. Currently
-    synced to version 12.0.2.
-
-
-    This package is used for advanced json serialization
-    and deserialization. Most Unity users will be better suited using the existing
-    json tools built into Unity.
-
-    To avoid assembly clashes, please use this
-    package if you intend to use Newtonsoft Json.'
-  status: 4
-  errors: []
-  versions:
-    all:
-    - 1.0.0-preview.2
-    - 1.0.0-preview.3
-    - 1.0.0-preview.4
-    - 1.0.1-preview.1
-    - 1.1.2
-    - 2.0.0-preview
-    - 2.0.0-preview.1
-    - 2.0.0-preview.2
-    - 2.0.0
-    - 2.0.1-preview.1
-    - 2.0.2
-    - 3.0.1
-    compatible:
-    - 2.0.0
-    - 2.0.1-preview.1
-    - 2.0.2
-    - 3.0.1
-    verified: 2.0.2
-  dependencies: []
-  resolvedDependencies: []
-  keywords: []
-  registry:
-    id: main
-    name: 
-    url: https://packages.unity.com
-    scopes: []
-    isDefault: 1
-    capabilities: 7
-  hideInEditor: 1
-  isAssetStorePackage: 0
-  datePublishedTicks: 637237898320000000
-  documentationUrl: 
-  hasRepository: 1
-  repository:
-    type: git
-    url: https://github.cds.internal.unity3d.com/unity/com.unity.nuget.newtonsoft-json.git
-    revision: d2fd6ed876261bbd82f59199ad711e7667bf633a
-    path: 
-  unityLifecycle:
-    version: 2.0.0
     nextVersion: 
 - packageId: com.unity.services.core@1.0.1
   testable: 0

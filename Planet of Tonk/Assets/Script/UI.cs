@@ -5,7 +5,6 @@ using TMPro;
 
 public class UI : MonoBehaviour
 {
-    private short sniper = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,20 +17,15 @@ public class UI : MonoBehaviour
         var sniperView = transform.GetChild(2);
         var NormalView = transform.GetChild(1);
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (CameraControler.sniper)
         {
-            if (sniper == 0)
-            {
-                sniperView.GetComponent<CanvasGroup>().alpha = 1;
-                NormalView.GetComponent<CanvasGroup>().alpha = 0;
-                sniper = 1;
-            }
-            else
-            {
-                sniperView.GetComponent<CanvasGroup>().alpha = 0;
-                NormalView.GetComponent<CanvasGroup>().alpha = 1;
-                sniper = 0;
-            }
+            sniperView.GetComponent<CanvasGroup>().alpha = 1;
+            NormalView.GetComponent<CanvasGroup>().alpha = 0;
+        }
+        else
+        {
+            sniperView.GetComponent<CanvasGroup>().alpha = 0;
+            NormalView.GetComponent<CanvasGroup>().alpha = 1;
         }
 
         var o = transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>() as TextMeshProUGUI;
@@ -47,7 +41,10 @@ public class UI : MonoBehaviour
             oSniper.color = Color.red;
         }
 
-        var aligmentDisplay = transform.GetChild(0).GetComponent<TextMeshProUGUI>() as TextMeshProUGUI;
+        var aligmentDisplay = transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>() as TextMeshProUGUI;
         aligmentDisplay.text = $"{Aiming.gunAlignment} m";
+
+        var point = transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>() as TextMeshProUGUI;
+        point.text = $"{target.point}";
     }
 }
