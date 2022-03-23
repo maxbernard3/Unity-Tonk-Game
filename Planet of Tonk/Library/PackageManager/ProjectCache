@@ -20,7 +20,7 @@ m_EmbeddedPackageManifests:
 m_LocalPackages:
   m_LocalFileStatus: []
 m_ProjectPath: /Users/maxbernard/Documents/GitHub/Unity Tonk Game/Planet of Tonk/Packages
-m_EditorVersion: 2021.2.15f1 (3b8567f665bb)
+m_EditorVersion: 2021.2.16f1 (559fc0ec6670)
 m_ResolvedPackages:
 - packageId: com.unity.collab-proxy@1.15.13
   testable: 0

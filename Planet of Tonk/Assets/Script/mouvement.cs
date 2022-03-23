@@ -25,7 +25,7 @@ public class mouvement : MonoBehaviour
     {
         power = Input.GetAxis("Vertical") * enginePower * Time.deltaTime * 250.0f;
         steer = Mathf.Abs(Input.GetAxis("Horizontal")) * Mathf.Sign(Input.GetAxis("Vertical")) * enginePower * Time.deltaTime * 200.0f;
-        brake = Input.GetKey("space") ? gameObject.GetComponent<Rigidbody>() .mass * 1f : 0.0f;
+        brake = Input.GetKey("space") ? gameObject.GetComponent<Rigidbody>() .mass * 10f : 0.0f;
 
         if (brake > 0.0)
         {
@@ -71,9 +71,9 @@ public class mouvement : MonoBehaviour
                 RearLeft.motorTorque = steer;
                 FrontLeft.motorTorque = steer;
                 CenterLeft.motorTorque = steer;
-                RearRight.motorTorque = 0.2f * steer;
-                FrontRight.motorTorque = 0.2f * steer;
-                CenterRight.motorTorque = 0.2f * steer;
+                RearRight.motorTorque = -0.2f * steer;
+                FrontRight.motorTorque = -0.2f * steer;
+                CenterRight.motorTorque = -0.2f * steer;
             }
             else
             {
@@ -86,9 +86,9 @@ public class mouvement : MonoBehaviour
                 RearRight.motorTorque = steer;
                 FrontRight.motorTorque = steer;
                 CenterRight.motorTorque = steer;
-                RearLeft.motorTorque = 0.2f * steer;
-                FrontLeft.motorTorque = 0.2f * steer;
-                CenterLeft.motorTorque = 0.2f * steer;
+                RearLeft.motorTorque = -0.2f * steer;
+                FrontLeft.motorTorque = -0.2f * steer;
+                CenterLeft.motorTorque = -0.2f * steer;
             }
         }
     }

@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -6,6 +7,8 @@ using TMPro;
 public class UI : MonoBehaviour
 {
     // Start is called before the first frame update
+    public static string range = "0";
+
     void Start()
     {
         
@@ -14,6 +17,7 @@ public class UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         var sniperView = transform.GetChild(2);
         var NormalView = transform.GetChild(1);
 
@@ -41,8 +45,25 @@ public class UI : MonoBehaviour
             oSniper.color = Color.red;
         }
 
-        var aligmentDisplay = transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>() as TextMeshProUGUI;
-        aligmentDisplay.text = $"{Aiming.gunAlignment} m";
+        var rangeDisplay = transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>() as TextMeshProUGUI;
+        switch (range.Length)
+        {
+            case 1 :
+                rangeDisplay.text = $"0 0 0 0  m";
+                break;
+            case 2:
+                rangeDisplay.text = $"0 0 {range[0]} {range[1]}  m";
+                break;
+            case 3:
+                rangeDisplay.text = $"0 {range[0]} {range[1]} {range[2]} m";
+                break;
+            case 4:
+                rangeDisplay.text = $"{range[0]} {range[1]} {range[2]} {range[3]} m";
+                break;
+            default:
+                rangeDisplay.text = $"9 9 9 9 m";
+                break;
+        }
 
         var point = transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>() as TextMeshProUGUI;
         point.text = $"{target.point}";

@@ -44,6 +44,21 @@ public class sniperControler : MonoBehaviour
 
         if (CameraControler.sniper)
         {
+            Ray ray2;
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                RaycastHit hit;
+                ray2 = gameObject.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(ray2, out hit))
+                {
+                    UI.range = ((ushort)hit.distance).ToString();
+                }
+                else
+                {
+                    UI.range = "10000";
+                }
+            }
 
             float mouseX = Input.GetAxis("Mouse X") * 50 * Time.deltaTime;
             float mouseY = Input.GetAxis("Mouse Y") * 50 * Time.deltaTime;

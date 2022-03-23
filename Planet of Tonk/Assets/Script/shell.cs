@@ -17,8 +17,6 @@ public class shell : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gravity += -10f * Time.deltaTime;
-
 
     }
 

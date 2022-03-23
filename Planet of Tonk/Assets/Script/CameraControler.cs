@@ -15,29 +15,21 @@ public class CameraControler : MonoBehaviour
     private GameObject sniperCamera;
 
     [SerializeField]
-    private Transform player;
-
-    [SerializeField]
     private float sensitivity = 100f;
-
-    private float xRotation = 0f;
-    private float yRotation = 0f;
 
     //Orbit Camera
     [SerializeField]
     private Transform tformCamera;
     [SerializeField]
-    private Transform tformParent;
-    [SerializeField]
+
     private float orbSensitivity = 100f;
 
-    private Vector3 localRotation;
+    private Vector3 cameraAngle;
 
     [SerializeField]
     private float orbitDistance = 10f;
 
     static public bool sniper = false;
-    private Quaternion lastRotation;
 
     //I'm starting to think I could reduce the number variable input here
 
@@ -61,9 +53,6 @@ public class CameraControler : MonoBehaviour
 
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
-
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             if (sniper == false)
@@ -82,32 +71,47 @@ public class CameraControler : MonoBehaviour
 
         if (sniper == false)
         {
+            Ray ray2;
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                RaycastHit hit;
+                ray2 = gameObject.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(ray2, out hit))
+                {
+                    UI.range = ((ushort)hit.distance).ToString();
+                }
+                else
+                {
+                    UI.range = "10000";
+                }
+            }
+
             if (Input.GetKeyDown("v") == true)
             {
-                lastRotation = Quaternion.Euler(tformParent.transform.localEulerAngles.x, tformParent.transform.localEulerAngles.y, 0);
                 if (fstPerson == false)
                 {
                     fstPerson = true;
                     tformCamera.transform.localPosition = new Vector3(0, 0, 0);
                     tformCamera.transform.localRotation = Quaternion.Euler(0, 0, 0);
-                    tformParent.transform.localRotation = lastRotation;
+
                 }
                 else
                 {
                     fstPerson = false;
                     tformCamera.transform.localPosition = new Vector3(0, 0, 0);
                     tformCamera.transform.localRotation = Quaternion.Euler(0, 0, 0);
-                    tformParent.transform.localRotation = lastRotation;
+
                 }
             }
 
             if (fstPerson == true)
             {
-                xRotation -= mouseY;
-                yRotation += mouseX;
-                xRotation = Mathf.Clamp(xRotation, -80f, 80f);
+                cameraAngle.y -= Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
+                cameraAngle.x += Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
+                cameraAngle.y = Mathf.Clamp(cameraAngle.y, -80f, 80f);
 
-                tformParent.transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
+                transform.parent.rotation = Quaternion.Euler(cameraAngle.y,cameraAngle.x, 0f);
             }
         }
 
@@ -118,13 +122,13 @@ public class CameraControler : MonoBehaviour
         {
             if (fstPerson == false)
             {
-                localRotation.x += Input.GetAxis("Mouse X") * orbSensitivity;
-                localRotation.y -= Input.GetAxis("Mouse Y") * orbSensitivity;
-                localRotation.y = Mathf.Clamp(localRotation.y, -30f, 70f);
+                cameraAngle.x += Input.GetAxis("Mouse X") * orbSensitivity;
+                cameraAngle.y -= Input.GetAxis("Mouse Y") * orbSensitivity;
+                cameraAngle.y = Mathf.Clamp(cameraAngle.y, -5f, 70f);
 
-                Quaternion QT = Quaternion.Euler(localRotation.y, localRotation.x, 0);
-                tformParent.rotation = Quaternion.Lerp(tformParent.rotation, QT, Time.deltaTime * 5f);
-                tformCamera.localPosition = new Vector3(0f, 0f, Mathf.Lerp(tformCamera.localPosition.z, orbitDistance * -1f, Time.deltaTime));
+                Quaternion QT = Quaternion.Euler(cameraAngle.y, cameraAngle.x, 0);
+                transform.parent.rotation = Quaternion.Lerp(transform.parent.rotation, QT, Time.deltaTime * 5f);
+                tformCamera.localPosition = new Vector3(0f, 0f, orbitDistance * -1f);
             }
         }
     }

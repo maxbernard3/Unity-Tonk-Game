@@ -111,7 +111,13 @@ namespace UnityEngine.UIElements
             if (capturingElement is VisualElement ve && ve.panel != m_Panel)
                 return;
 
-            if (capturingElement == null)
+            var capturingPanel = PointerDeviceState.GetPressedButtons(pointerId) != 0 ?
+                                 PointerDeviceState.GetPlayerPanelWithSoftPointerCapture(pointerId) :
+                                 null;
+            if (capturingPanel != null && capturingPanel != m_Panel)
+                return;
+
+            if (capturingElement == null && capturingPanel == null)
             {
                 if (!m_Panel.ScreenToPanel(position, delta, out var panelPosition, out _))
                     return;
