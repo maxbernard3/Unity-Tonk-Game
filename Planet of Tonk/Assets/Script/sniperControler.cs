@@ -9,8 +9,8 @@ public class sniperControler : MonoBehaviour
     [SerializeField]
     private GameObject sniperCamera;
 
-    private float xRotation = 0f;
-    private float yRotation = 0f;
+    private float xRotation;
+    private float yRotation;
 
     [SerializeField]
     private float maxElevation = 30;
@@ -33,6 +33,9 @@ public class sniperControler : MonoBehaviour
                 sniperCamera.SetActive(true);
                 mainCamera.SetActive(false);
                 CameraControler.sniper = true;
+
+                xRotation = transform.parent.parent.localRotation.y;
+                yRotation = transform.parent.localRotation.x;
             }
             else
             {
@@ -41,7 +44,10 @@ public class sniperControler : MonoBehaviour
                 CameraControler.sniper = false;
             }
         }
+    }
 
+    private void LateUpdate()
+    {
         if (CameraControler.sniper)
         {
             Ray ray2;
@@ -60,8 +66,8 @@ public class sniperControler : MonoBehaviour
                 }
             }
 
-            float mouseX = Input.GetAxis("Mouse X") * 50 * Time.deltaTime;
-            float mouseY = Input.GetAxis("Mouse Y") * 50 * Time.deltaTime;
+            float mouseX = Input.GetAxis("Mouse X") * 5 * Time.deltaTime;
+            float mouseY = Input.GetAxis("Mouse Y") * 5 * Time.deltaTime;
 
             xRotation -= mouseY;
             yRotation += mouseX;

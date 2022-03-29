@@ -9,6 +9,7 @@ public class mouvement : MonoBehaviour
     private float brake = 0.0f;
     private float steer = 0.0f;
     public float maxSteer = 25.0f;
+    public float maxSpeed = 40f;
     public WheelCollider FrontLeft;
     public WheelCollider FrontRight;
     public WheelCollider CenterLeft;
@@ -23,6 +24,7 @@ public class mouvement : MonoBehaviour
 
     void Update()
     {
+
         power = Input.GetAxis("Vertical") * enginePower * Time.deltaTime * 250.0f;
         steer = Mathf.Abs(Input.GetAxis("Horizontal")) * Mathf.Sign(Input.GetAxis("Vertical")) * enginePower * Time.deltaTime * 200.0f;
         brake = Input.GetKey("space") ? gameObject.GetComponent<Rigidbody>() .mass * 10f : 0.0f;
@@ -68,12 +70,12 @@ public class mouvement : MonoBehaviour
                 RearRight.brakeTorque = 0f;
                 CenterLeft.brakeTorque = 0f;
                 CenterRight.brakeTorque = 0f;
-                RearLeft.motorTorque = steer;
-                FrontLeft.motorTorque = steer;
-                CenterLeft.motorTorque = steer;
-                RearRight.motorTorque = -0.2f * steer;
-                FrontRight.motorTorque = -0.2f * steer;
-                CenterRight.motorTorque = -0.2f * steer;
+                RearLeft.motorTorque = steer * 1.8f;
+                FrontLeft.motorTorque = steer * 1.8f;
+                CenterLeft.motorTorque = steer * 1.8f;
+                RearRight.motorTorque = 0.2f * steer;
+                FrontRight.motorTorque = 0.2f * steer;
+                CenterRight.motorTorque = 0.2f * steer;
             }
             else
             {
@@ -83,13 +85,15 @@ public class mouvement : MonoBehaviour
                 RearRight.brakeTorque = 0f;
                 CenterLeft.brakeTorque = 0f;
                 CenterRight.brakeTorque = 0f;
-                RearRight.motorTorque = steer;
-                FrontRight.motorTorque = steer;
-                CenterRight.motorTorque = steer;
-                RearLeft.motorTorque = -0.2f * steer;
-                FrontLeft.motorTorque = -0.2f * steer;
-                CenterLeft.motorTorque = -0.2f * steer;
+                RearRight.motorTorque = steer * 1.8f;
+                FrontRight.motorTorque = steer * 1.8f;
+                CenterRight.motorTorque = steer * 1.8f;
+                RearLeft.motorTorque = 0.2f * steer;
+                FrontLeft.motorTorque = 0.2f * steer;
+                CenterLeft.motorTorque = 0.2f * steer;
             }
         }
+
+        gameObject.GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(gameObject.GetComponent<Rigidbody>().velocity, maxSpeed);
     }
 }

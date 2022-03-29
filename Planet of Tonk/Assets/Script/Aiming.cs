@@ -23,6 +23,9 @@ public class Aiming : MonoBehaviour
 
     private Vector3 savedElev = new Vector3(0, 0, 0);
     private Vector3 savedRot = new Vector3(0, 0, 0);
+
+    static public float GunElevation = 0f;
+    static public float TuretAngle = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +63,9 @@ public class Aiming : MonoBehaviour
                 Elevate(1.0f); //up
             else
                 Elevate(-1.0f); //down
+
+            TuretAngle = transform.rotation.y;
+            GunElevation = transform.GetChild(0).localRotation.x;
         }
     }
 

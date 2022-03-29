@@ -24,7 +24,7 @@ public class CameraControler : MonoBehaviour
 
     private float orbSensitivity = 100f;
 
-    private Vector3 cameraAngle;
+    static public Vector3 cameraAngle;
 
     [SerializeField]
     private float orbitDistance = 10f;
