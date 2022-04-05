@@ -55,6 +55,7 @@ public class CameraControler : MonoBehaviour
             {
                 sniper = true;
                 fstPerson = false;
+                mainCamera.GetComponent<Camera>().fieldOfView = 5f;
                 tformCamera.transform.localPosition = new Vector3(0, 0, 0);
                 tformCamera.transform.localRotation = Quaternion.Euler(0, 0, 0);
             }
@@ -62,6 +63,7 @@ public class CameraControler : MonoBehaviour
             {
                 sniper = false;
                 fstPerson = false;
+                mainCamera.GetComponent<Camera>().fieldOfView = 60f;
                 tformCamera.transform.localPosition = new Vector3(0, 0, 0);
                 tformCamera.transform.localRotation = Quaternion.Euler(0, 0, 0);
             }
@@ -120,8 +122,8 @@ public class CameraControler : MonoBehaviour
             transform.parent.rotation = Quaternion.Euler(cameraAngle.y, cameraAngle.x, 0f);
             transform.position = transform.parent.parent.GetChild(1).position;
 
-            if (Mathf.Abs(transform.rotation.y - transform.parent.parent.GetChild(1).GetChild(0).rotation.y) > 0.005f ||
-                Mathf.Abs(transform.rotation.x - transform.parent.parent.GetChild(1).GetChild(0).rotation.x) > 0.005f)
+            if (Mathf.Abs(transform.rotation.y - transform.parent.parent.GetChild(1).GetChild(0).rotation.y) > 0.01f ||
+                Mathf.Abs(transform.rotation.x - transform.parent.parent.GetChild(1).GetChild(0).rotation.x) > 0.01f)
             {
                 transform.rotation = transform.parent.parent.GetChild(1).GetChild(0).rotation;
             }

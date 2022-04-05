@@ -35,28 +35,43 @@ public class Aiming : MonoBehaviour
         Vector3 aimpoint = ray.GetPoint(gunAlignment);
 
         Plane rot = new Plane(transform.right, transform.position);
-        if (Mathf.Abs(rot.GetDistanceToPoint(aimpoint)) < 0)
-            return;
-
-        if (rot.GetSide(aimpoint))
-            Rotate(1.0f); //right
+        if (Mathf.Abs(rot.GetDistanceToPoint(aimpoint)) < 0.01f)
+        {
+            if (rot.GetSide(aimpoint))
+                Rotate(0.1f); //right
+            else
+                Rotate(-0.1f); //left
+        }
         else
-            Rotate(-1.0f); //left
+        {
+            if (rot.GetSide(aimpoint))
+                Rotate(1); //right
+            else
+                Rotate(-1); //left
+        }
 
 
         Plane elev = new Plane(transform.GetChild(0).up, transform.GetChild(0).position);
-        if (Mathf.Abs(elev.GetDistanceToPoint(aimpoint)) < 0)
-            return;
-
-        if (elev.GetSide(aimpoint))
-            Elevate(1.0f); //up
+        if (Mathf.Abs(elev.GetDistanceToPoint(aimpoint)) < 0.01f)
+        {
+            if (elev.GetSide(aimpoint))
+                Elevate(0.1f); //up
+            else
+                Elevate(-0.1f); //down
+        }
         else
-            Elevate(-1.0f); //down
+        {
+            if (elev.GetSide(aimpoint))
+                Elevate(1); //up
+            else
+                Elevate(-1); //down
+        }
+
     }
 
     public virtual void Elevate(float direction)
     {
-        direction = Mathf.Clamp(-direction, -1.0f, 1.0f);
+        direction = Mathf.Clamp(-direction, -1f, 1f);
 
         float angle = transform.GetChild(0).localEulerAngles.x + direction * elevationSpeed * Time.deltaTime;
         if (angle > 180)
@@ -69,7 +84,7 @@ public class Aiming : MonoBehaviour
 
     public virtual void Rotate(float direction)
     {
-        direction = Mathf.Clamp(direction, -1.0f, 1.0f);
+        direction = Mathf.Clamp(direction, -1f, 1f);
 
         float angle = transform.localEulerAngles.y + direction * rotationSpeed * Time.deltaTime;
         if (angle > 180)
