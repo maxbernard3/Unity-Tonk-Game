@@ -10,22 +10,17 @@ public class Aiming : MonoBehaviour
     private GameObject sniperCamera;
 
     [SerializeField]
-    private float maxElevation;
+    public static float maxElevation = 30;
     [SerializeField]
-    private float maxDepresion;
+    public static float maxDepresion = -10;
 
     [SerializeField]
-    private float rotationSpeed = 10f;
+    public static float rotationSpeed = 30f;
     [SerializeField]
-    private float elevationSpeed = 10f;
+    public static float elevationSpeed = 30f;
 
-    public float gunAlignment = 500f;
+    public float gunAlignment = 1000f;
 
-    private Vector3 savedElev = new Vector3(0, 0, 0);
-    private Vector3 savedRot = new Vector3(0, 0, 0);
-
-    static public float GunElevation = 0f;
-    static public float TuretAngle = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,37 +31,27 @@ public class Aiming : MonoBehaviour
     void Update()
     {
         Ray ray;
-        if (CameraControler.sniper)
-        {
+        ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
+        Vector3 aimpoint = ray.GetPoint(gunAlignment);
 
-        }
+        Plane rot = new Plane(transform.right, transform.position);
+        if (Mathf.Abs(rot.GetDistanceToPoint(aimpoint)) < 0)
+            return;
+
+        if (rot.GetSide(aimpoint))
+            Rotate(1.0f); //right
         else
-        {
-            ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
-            Vector3 aimpoint = ray.GetPoint(gunAlignment);
-
-            Plane rot = new Plane(transform.right, transform.position);
-            if (Mathf.Abs(rot.GetDistanceToPoint(aimpoint)) < 0)
-                return;
-
-            if (rot.GetSide(aimpoint))
-                Rotate(1.0f); //right
-            else
-                Rotate(-1.0f); //left
+            Rotate(-1.0f); //left
 
 
-            Plane elev = new Plane(transform.GetChild(0).up, transform.GetChild(0).position);
-            if (Mathf.Abs(elev.GetDistanceToPoint(aimpoint)) < 0)
-                return;
+        Plane elev = new Plane(transform.GetChild(0).up, transform.GetChild(0).position);
+        if (Mathf.Abs(elev.GetDistanceToPoint(aimpoint)) < 0)
+            return;
 
-            if (elev.GetSide(aimpoint))
-                Elevate(1.0f); //up
-            else
-                Elevate(-1.0f); //down
-
-            TuretAngle = transform.rotation.y;
-            GunElevation = transform.GetChild(0).localRotation.x;
-        }
+        if (elev.GetSide(aimpoint))
+            Elevate(1.0f); //up
+        else
+            Elevate(-1.0f); //down
     }
 
     public virtual void Elevate(float direction)
@@ -94,19 +79,5 @@ public class Aiming : MonoBehaviour
         //    angle = Mathf.Clamp(angle, minRotation, maxRotation);
 
         transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, angle, transform.localEulerAngles.z);
-    }
-
-    private void LateUpdate()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            transform.localEulerAngles = savedRot;
-            transform.GetChild(0).localEulerAngles = savedElev;
-        }
-        else
-        {
-            savedRot = transform.localEulerAngles;
-            savedElev = transform.GetChild(0).localEulerAngles;
-        }
     }
 }

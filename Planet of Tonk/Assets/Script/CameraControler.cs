@@ -11,8 +11,6 @@ public class CameraControler : MonoBehaviour
     //Comander Camera
     [SerializeField]
 	private GameObject mainCamera;
-    [SerializeField]
-    private GameObject sniperCamera;
 
     [SerializeField]
     private float sensitivity = 100f;
@@ -41,12 +39,10 @@ public class CameraControler : MonoBehaviour
         Cursor.visible = false;
         if (sniper == false)
         {
-            sniperCamera.SetActive(false);
             mainCamera.SetActive(true);
         }
         else
         {
-            sniperCamera.SetActive(true);
             mainCamera.SetActive(false);
         }
     }
@@ -57,35 +53,38 @@ public class CameraControler : MonoBehaviour
         {
             if (sniper == false)
             {
-                sniperCamera.SetActive(true);
-                mainCamera.SetActive(false);
                 sniper = true;
+                fstPerson = false;
+                tformCamera.transform.localPosition = new Vector3(0, 0, 0);
+                tformCamera.transform.localRotation = Quaternion.Euler(0, 0, 0);
             }
             else
             {
-                sniperCamera.SetActive(false);
-                mainCamera.SetActive(true);
                 sniper = false;
+                fstPerson = false;
+                tformCamera.transform.localPosition = new Vector3(0, 0, 0);
+                tformCamera.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            }
+        }
+
+        Ray ray2;
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            RaycastHit hit;
+            ray2 = gameObject.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray2, out hit))
+            {
+                UI.range = ((ushort)hit.distance).ToString();
+            }
+            else
+            {
+                UI.range = "10000";
             }
         }
 
         if (sniper == false)
         {
-            Ray ray2;
-
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                RaycastHit hit;
-                ray2 = gameObject.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray2, out hit))
-                {
-                    UI.range = ((ushort)hit.distance).ToString();
-                }
-                else
-                {
-                    UI.range = "10000";
-                }
-            }
 
             if (Input.GetKeyDown("v") == true)
             {
@@ -94,14 +93,12 @@ public class CameraControler : MonoBehaviour
                     fstPerson = true;
                     tformCamera.transform.localPosition = new Vector3(0, 0, 0);
                     tformCamera.transform.localRotation = Quaternion.Euler(0, 0, 0);
-
                 }
                 else
                 {
                     fstPerson = false;
                     tformCamera.transform.localPosition = new Vector3(0, 0, 0);
                     tformCamera.transform.localRotation = Quaternion.Euler(0, 0, 0);
-
                 }
             }
 
@@ -115,6 +112,19 @@ public class CameraControler : MonoBehaviour
             }
         }
 
+        if (sniper == true)
+        {
+            cameraAngle.y -= Input.GetAxis("Mouse Y") * Aiming.rotationSpeed * Time.deltaTime;
+            cameraAngle.x += Input.GetAxis("Mouse X") * Aiming.elevationSpeed * Time.deltaTime;
+            cameraAngle.y = Mathf.Clamp(cameraAngle.y, -Aiming.maxElevation, -Aiming.maxDepresion);
+
+            transform.parent.rotation = Quaternion.Euler(cameraAngle.y, cameraAngle.x, 0f);
+            transform.position = transform.parent.parent.GetChild(1).position;
+            transform.Translate(Vector3.up * 0.4f);
+            transform.Translate(Vector3.left * 0.7f);
+            transform.Translate(Vector3.forward * 0.6f);
+        }
+
     }
     private void LateUpdate()
     {
@@ -124,7 +134,7 @@ public class CameraControler : MonoBehaviour
             {
                 cameraAngle.x += Input.GetAxis("Mouse X") * orbSensitivity;
                 cameraAngle.y -= Input.GetAxis("Mouse Y") * orbSensitivity;
-                cameraAngle.y = Mathf.Clamp(cameraAngle.y, -5f, 70f);
+                cameraAngle.y = Mathf.Clamp(cameraAngle.y, -30, 80);
 
                 Quaternion QT = Quaternion.Euler(cameraAngle.y, cameraAngle.x, 0);
                 transform.parent.rotation = Quaternion.Lerp(transform.parent.rotation, QT, Time.deltaTime * 5f);
