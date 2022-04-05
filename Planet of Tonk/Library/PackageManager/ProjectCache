@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637829437470000000
+      ticks: 637847591870000000
     m_Hash: 1119030035
   m_LockFileStatus:
     m_FilePath: /Users/maxbernard/Documents/GitHub/Unity Tonk Game/Planet of Tonk/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637829437490000000
+      ticks: 637847591870000000
     m_Hash: 2584499476
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -288,9 +288,11 @@ m_ResolvedPackages:
     - 3.0.9
     - 3.0.10
     - 3.0.12
+    - 3.0.13
     compatible:
     - 3.0.12
-    verified: 3.0.12
+    - 3.0.13
+    verified: 3.0.13
   dependencies:
   - name: com.unity.ext.nunit
     version: 1.0.6
@@ -3071,6 +3073,8 @@ m_ResolvedPackages:
     - 1.2.0-exp.3
     - 1.2.0-exp.4
     - 1.2.0-exp.5
+    - 1.2.0-exp.6
+    - 1.2.0-exp.7
     compatible:
     - 1.0.1
     - 1.1.0
@@ -3080,6 +3084,8 @@ m_ResolvedPackages:
     - 1.2.0-exp.3
     - 1.2.0-exp.4
     - 1.2.0-exp.5
+    - 1.2.0-exp.6
+    - 1.2.0-exp.7
     verified: 1.0.1
   dependencies:
   - name: com.unity.test-framework

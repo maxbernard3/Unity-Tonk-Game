@@ -114,15 +114,21 @@ public class CameraControler : MonoBehaviour
 
         if (sniper == true)
         {
-            cameraAngle.y -= Input.GetAxis("Mouse Y") * Aiming.rotationSpeed * Time.deltaTime;
-            cameraAngle.x += Input.GetAxis("Mouse X") * Aiming.elevationSpeed * Time.deltaTime;
-            cameraAngle.y = Mathf.Clamp(cameraAngle.y, -Aiming.maxElevation, -Aiming.maxDepresion);
+            cameraAngle.y -= Input.GetAxis("Mouse Y") * Aiming.rotationSpeed * 2 * Time.deltaTime;
+            cameraAngle.x += Input.GetAxis("Mouse X") * Aiming.elevationSpeed * 2 * Time.deltaTime;
 
             transform.parent.rotation = Quaternion.Euler(cameraAngle.y, cameraAngle.x, 0f);
             transform.position = transform.parent.parent.GetChild(1).position;
-            transform.Translate(Vector3.up * 0.4f);
+
+            if (Mathf.Abs(transform.rotation.y - transform.parent.parent.GetChild(1).GetChild(0).rotation.y) > 0.005f ||
+                Mathf.Abs(transform.rotation.x - transform.parent.parent.GetChild(1).GetChild(0).rotation.x) > 0.005f)
+            {
+                transform.rotation = transform.parent.parent.GetChild(1).GetChild(0).rotation;
+            }
+
+            transform.Translate(Vector3.up * 0.5f);
             transform.Translate(Vector3.left * 0.7f);
-            transform.Translate(Vector3.forward * 0.6f);
+            transform.Translate(Vector3.forward * 1.6f);
         }
 
     }
