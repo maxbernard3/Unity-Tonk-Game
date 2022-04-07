@@ -1,0 +1,277 @@
+Unity Editor version:    2021.2.16f1 (559fc0ec6670)
+Branch:                  2021.2/staging
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 11.3.1 (Build 20E241)
+Darwin version:          20.4.0
+Architecture:            arm64
+Running under Rosetta:   NO
+Available memory:        8192 MB
+Using pre-set license
+Pro License: YES
+
+COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/2021.2.16f1/Unity.app/Contents/MacOS/Unity
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+/Users/maxbernard/Documents/GitHub/Unity Tonk Game/Planet of Tonk
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+56558
+Successfully changed project path to: /Users/maxbernard/Documents/GitHub/Unity Tonk Game/Planet of Tonk
+/Users/maxbernard/Documents/GitHub/Unity Tonk Game/Planet of Tonk
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 71.56 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.2.16f1 (559fc0ec6670)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2021.2.16f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/maxbernard/Documents/GitHub/Unity Tonk Game/Planet of Tonk/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+ preferred device: Apple M1 (high power)
+Metal devices available: 1
+0: Apple M1 (high power)
+Using device Apple M1 (high power)
+Initializing Metal device caps: Apple M1
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/2021.2.16f1/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/2021.2.16f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
+Mono config path = '/Applications/Unity/Hub/Editor/2021.2.16f1/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56033
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/2021.2.16f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/2021.2.16f1/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.002960 seconds.
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 71.34 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.467 seconds
+Domain Reload Profiling:
+	ReloadAssembly (468ms)
+		BeginReloadAssembly (72ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (0ms)
+		EndReloadAssembly (318ms)
+			LoadAssemblies (72ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (79ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (19ms)
+			SetupLoadedEditorAssemblies (191ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (34ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (71ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (59ms)
+				ProcessInitializeOnLoadMethodAttributes (26ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.004192 seconds.
+An ADB process has shut down when we were accessing it, the following System.ArgumentOutOfRangeException has been thrown: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/maxbernard/Documents/GitHub/Unity Tonk Game/Planet of Tonk/Library/PackageCache/com.unity.visualscripting@1.7.6/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/maxbernard/Documents/GitHub/Unity Tonk Game/Planet of Tonk/Library/PackageCache/com.unity.visualscripting@1.7.6/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.31 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.805 seconds
+Domain Reload Profiling:
+	ReloadAssembly (805ms)
+		BeginReloadAssembly (184ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (132ms)
+		EndReloadAssembly (544ms)
+			LoadAssemblies (62ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (182ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (35ms)
+			SetupLoadedEditorAssemblies (240ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (56ms)
+				ProcessInitializeOnLoadAttributes (154ms)
+				ProcessInitializeOnLoadMethodAttributes (20ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (3ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launching external process: /Applications/Unity/Hub/Editor/2021.2.16f1/Unity.app/Contents/Tools/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.12 seconds
+Refreshing native plugins compatible for Editor in 0.40 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3384 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 26 unused Assets / (96.3 KB). Loaded Objects now: 3874.
+Memory consumption went from 252.1 MB to 252.0 MB.
+Total: 2.322833 ms (FindLiveObjects: 0.142875 ms CreateObjectMapping: 0.043125 ms MarkObjects: 2.047250 ms  DeleteObjects: 0.089042 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 554179.495503 seconds.
+  path: Assets/Prefab/Aiming Assembly.prefab
+  artifactKey: Guid(9b30bdd9e5c4b407fb08239d9ee4c308) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Aiming Assembly.prefab using Guid(9b30bdd9e5c4b407fb08239d9ee4c308) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '907e2316ce94753f2a0b1057847a2b2e') in 0.723967 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/Prefab/Player.prefab
+  artifactKey: Guid(a7471cf37138f4dd59a4a253232f07d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Player.prefab using Guid(a7471cf37138f4dd59a4a253232f07d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce5c5b8592c902d77eb579cd93ce93aa') in 0.008793 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 200.398228 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat
+  artifactKey: Guid(e73a58f6e2794ae7b1b7e50b7fb811b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat using Guid(e73a58f6e2794ae7b1b7e50b7fb811b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a1e54cd6c661db321d262e2413d3ab8') in 0.428781 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat
+  artifactKey: Guid(79459efec17a4d00a321bdcc27bbc385) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat using Guid(79459efec17a4d00a321bdcc27bbc385) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5ea34c5b9ec3e21ef5d4fef11da5459') in 0.081360 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/terain/TerrainData_4ffb8634-fcb9-40d2-99ce-aaef92fb05f2.asset
+  artifactKey: Guid(c313e6749ddcf47f78ed52233ddd5cf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/terain/TerrainData_4ffb8634-fcb9-40d2-99ce-aaef92fb05f2.asset using Guid(c313e6749ddcf47f78ed52233ddd5cf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tree prefab at index 0 is missing.
+Tree prefab at index 1 is missing.
+ -> (artifact id: 'ddd7f6e313c865ec2eabe36993e61d01') in 0.062634 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/terain/TerrainData_77a5c216-5bee-4436-b876-ce512fa41ab0.asset
+  artifactKey: Guid(1a8217d6c10ae46a8a2b989a5dfc1e19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/terain/TerrainData_77a5c216-5bee-4436-b876-ce512fa41ab0.asset using Guid(1a8217d6c10ae46a8a2b989a5dfc1e19) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tree prefab at index 0 is missing.
+Tree prefab at index 1 is missing.
+ -> (artifact id: '796930b43addb56577405f68d6810ab8') in 0.008385 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/terain/TerrainData_7b6d2284-ac76-479f-8094-efd2a13a5239.asset
+  artifactKey: Guid(574ae27cc61c84fcfb5d08ebdedd6285) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/terain/TerrainData_7b6d2284-ac76-479f-8094-efd2a13a5239.asset using Guid(574ae27cc61c84fcfb5d08ebdedd6285) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tree prefab at index 0 is missing.
+Tree prefab at index 1 is missing.
+ -> (artifact id: 'f9b3282c13a1da2da3d60952b66ff538') in 0.008002 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/terain/TerrainData_7d22b636-d543-42b5-9e21-69146c677323.asset
+  artifactKey: Guid(35f5e030dbcd740e6bd1aef2a78af5d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/terain/TerrainData_7d22b636-d543-42b5-9e21-69146c677323.asset using Guid(35f5e030dbcd740e6bd1aef2a78af5d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5386c231af6d43c9979b91008e8c3a0c') in 0.007548 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/terain/TerrainData_0b44a710-ab11-4f19-a56a-d47ddb7e384c.asset
+  artifactKey: Guid(a549cbf18c7f34a3a85411fbcac5d704) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/terain/TerrainData_0b44a710-ab11-4f19-a56a-d47ddb7e384c.asset using Guid(a549cbf18c7f34a3a85411fbcac5d704) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tree prefab at index 0 is missing.
+Tree prefab at index 1 is missing.
+ -> (artifact id: '256f3ce7b36d8acab748e600733a1b2c') in 0.007932 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/terain/TerrainData_e244d0b7-8de5-4bf8-b621-92870ce4fb23.asset
+  artifactKey: Guid(e726873e182114f979118b759ce102b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/terain/TerrainData_e244d0b7-8de5-4bf8-b621-92870ce4fb23.asset using Guid(e726873e182114f979118b759ce102b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f7ad0c1bc4af4d5e566c6f9465387eb') in 0.008105 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/terain/TerrainData_39b123b8-2873-4939-bd77-3f2d811ec609.asset
+  artifactKey: Guid(67d3d8b66caf44b268ec1074937c360f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/terain/TerrainData_39b123b8-2873-4939-bd77-3f2d811ec609.asset using Guid(67d3d8b66caf44b268ec1074937c360f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f592b560651c91523118f635512b7d5') in 0.010039 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/terain/TerrainData_962acacd-4551-4ac2-9795-a14a8102b68f.asset
+  artifactKey: Guid(9ad000aca97cc4706a279b84cfb950ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/terain/TerrainData_962acacd-4551-4ac2-9795-a14a8102b68f.asset using Guid(9ad000aca97cc4706a279b84cfb950ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3170de0794804f1370d026ae1d619412') in 0.007752 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/terain/TerrainData_428ea0ac-5b89-4166-bf12-c283f28bfdfa.asset
+  artifactKey: Guid(076af3ccaf3ca45d1ba9ba2bfb7ee1f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/terain/TerrainData_428ea0ac-5b89-4166-bf12-c283f28bfdfa.asset using Guid(076af3ccaf3ca45d1ba9ba2bfb7ee1f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '449ee5f34c9e16f26c7180a668ac7a2e') in 0.007842 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/terain/TerrainData_4f35bbd8-9b13-4bf6-bced-e1ce2ae13600.asset
+  artifactKey: Guid(dd2f05b019aa64bc1bb59e86d9236597) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/terain/TerrainData_4f35bbd8-9b13-4bf6-bced-e1ce2ae13600.asset using Guid(dd2f05b019aa64bc1bb59e86d9236597) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f617a13147ca9b9116c9d27771572574') in 0.007272 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/terain/TerrainData_0e1dd080-256e-485b-94d9-ca134beda847.asset
+  artifactKey: Guid(d5cae245fde8a45cc9e440407d4dedfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/terain/TerrainData_0e1dd080-256e-485b-94d9-ca134beda847.asset using Guid(d5cae245fde8a45cc9e440407d4dedfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tree prefab at index 0 is missing.
+Tree prefab at index 1 is missing.
+ -> (artifact id: '29a3edc5d08c95419dfff1901720794e') in 0.007200 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/terain/TerrainData_091b7fca-4655-428d-80bf-6c8146523dd9.asset
+  artifactKey: Guid(fa43dd84b49934549ad4120031c6e1cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/terain/TerrainData_091b7fca-4655-428d-80bf-6c8146523dd9.asset using Guid(fa43dd84b49934549ad4120031c6e1cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f89933c5aaf7d7c2395e6796fa86eaf4') in 0.007839 seconds 
